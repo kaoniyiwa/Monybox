@@ -16,8 +16,7 @@ read -sp "请输入Kali用户的SSH密码: " KALI_PW
 cd ~
 if [ ! -f "sshpass-1.10.tar.gz" ]; then
     echo "下载插件包..."
-    wget blob:https://github.com/b6910002-07f0-413d-846b-4d1c011a5f10 || { echo "下载 sshpass 源码包失败，请切换备用下载地址。"; exit 1; }
-    ##备用地址为“https://pan.kaoniyiwa.cn/d/Aliyun/SCAS/linux/sshpass-1.10.tar.gz”
+    wget https://pan.kaoniyiwa.cn/d/Aliyun/SCAS/linux/sshpass-1.10.tar.gz || { echo "下载 sshpass 源码包失败，请手动下载sshpass包！"; exit 1; }
 fi
 if ! command -v sshpass &>/dev/null; then
     echo "解压并安装"
